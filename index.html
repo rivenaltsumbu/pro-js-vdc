@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#dce8ff">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <form class="registration-card" id="registration-form">
+        <h1>Registration</h1>
+
+        <section class="form-section" aria-labelledby="personal-heading">
+          <h2 id="personal-heading">Personal Details</h2>
+          <div class="field-grid">
+            <div class="field">
+              <label for="full-name">Full Name</label>
+              <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Enter your name" required>
+            </div>
+            <div class="field">
+              <label for="father-name">Father Name</label>
+              <input id="father-name" name="fatherName" type="text" autocomplete="off" placeholder="Enter father name" required>
+            </div>
+            <div class="field">
+              <label for="mother-name">Mother Name</label>
+              <input id="mother-name" name="motherName" type="text" autocomplete="off" placeholder="Enter mother name" required>
+            </div>
+            <div class="field">
+              <label for="birth-date">Date of Birth</label>
+              <input id="birth-date" name="birthDate" type="date" autocomplete="bday" required>
+            </div>
+            <div class="field">
+              <label for="aadhaar-number">Aadhaar Number</label>
+              <input id="aadhaar-number" name="aadhaarNumber" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter Aadhaar number" pattern="[0-9 ]{12,14}" aria-describedby="aadhaar-hint" required>
+              <span class="field-hint" id="aadhaar-hint">Enter 12 digits.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="Enter your email" required>
+            </div>
+            <div class="field">
+              <label for="mobile">Mobile Number</label>
+              <input id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="Enter mobile number" required>
+            </div>
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="" selected disabled>Select your gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="address">Address</label>
+              <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Enter your address" required>
+            </div>
+          </div>
+        </section>
+
+        <button class="submit-button" type="submit">Submit</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <section class="records-card" aria-labelledby="records-heading">
+        <div class="records-header">
+          <div>
+            <h2 id="records-heading">Registered Information</h2>
+            <p class="records-description">Submitted registrations appear here during this page session.</p>
+          </div>
+          <p class="record-count" id="record-count" aria-live="polite">0 registrations</p>
+        </div>
+        <div class="table-scroll" role="region" aria-label="Registered information table" tabindex="0">
+          <table>
+            <caption>Information submitted through the registration form</caption>
+            <thead>
+              <tr>
+                <th scope="col">Full Name</th>
+                <th scope="col">Father Name</th>
+                <th scope="col">Mother Name</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Aadhaar Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Address</th>
+              </tr>
+            </thead>
+            <tbody id="records-body">
+              <tr class="empty-row">
+                <td colspan="9">No registrations yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

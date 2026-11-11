@@ -1,0 +1,278 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --accent-color: #e85a00;
+  --text-color: #171717;
+  --border-color: #a9a9a9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #dce8ff 0%, #edf1ff 50%, #e1f4f3 100%);
+  color: var(--text-color);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.registration-card {
+  width: min(100%, 900px);
+  align-self: center;
+  padding: 20px 24px 18px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.records-card {
+  width: 100%;
+  margin-top: 22px;
+  padding: 20px 24px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.records-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.records-description {
+  margin: 6px 0 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.record-count {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid #075f9b;
+  outline-offset: 2px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+th,
+td {
+  min-width: 120px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e3e3e3;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+th {
+  background: #f3f5f5;
+  font-weight: 600;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.empty-row td {
+  padding: 20px;
+  color: #555;
+  text-align: center;
+}
+
+h1 {
+  width: fit-content;
+  margin: 0 0 15px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #bd8f42;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form-section h2 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 14px;
+}
+
+.field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text-color);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.field input::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.submit-button:focus-visible {
+  outline: 3px solid #075f9b;
+  outline-offset: 2px;
+}
+
+.field-hint {
+  color: #555;
+  font-size: 0.75rem;
+}
+
+.submit-button {
+  display: block;
+  width: min(100%, 440px);
+  min-height: 46px;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--accent-color);
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.submit-button:hover {
+  background: #c94d00;
+}
+
+.submit-button:active {
+  transform: scale(0.99);
+}
+
+.form-status {
+  min-height: 1.25em;
+  margin: 10px 0 0;
+  color: #176b36;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 18px;
+  }
+
+  .registration-card {
+    padding: 20px;
+  }
+
+  .records-card {
+    padding: 18px;
+  }
+
+  .field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 12px;
+  }
+
+  .registration-card {
+    padding: 18px 16px;
+  }
+
+  .records-card {
+    padding: 16px 12px;
+  }
+
+  .records-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
